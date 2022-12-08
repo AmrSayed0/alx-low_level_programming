@@ -1,1 +1,1 @@
-This is my first C exercise
+0x00. C - Hello, World
