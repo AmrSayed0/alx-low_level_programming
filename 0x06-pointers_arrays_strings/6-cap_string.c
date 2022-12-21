@@ -1,35 +1,55 @@
 #include "main.h"
-/**
- * cap_string - capitalizes every first letter of a word in a string
- * separators of words are: space, tabulation
- * new line
- * @s: POinter to string
- *
- * Return: Pointer to s
- */
-char *cap_string(char *s)
-{
-	int count;
 
-	count = 0;
-  while (s[count] != '\0')
+/**
+ *
+ *  * _strlen - returns the length of a string
+ *
+ *   * @s: string
+ *
+ *    * Return: returns length as integer;
+ *
+ *     */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*(s + len) != '\0')
+		len++;
+
+	return (len);
+}
+
+/**
+ *
+ * * cap_string - function that capitalize first character of a word
+ *
+ * * @str: string to capitalize
+ *
+ * * Return: returns the capitalized string
+ *
+ * */
+
+char *cap_string(char *str)
+{
+	int index = 0;
+
+	while (str[++index])
 	{
-		if (s[0] >= 97 && s[0] <= 122)
-		{
-			s[0] = s[0] - 32;
-		}
-		if (s[count] == ' ' || s[count] == '\t' || s[count] == '\n'
-		    || s[count] == ',' || s[count] == ';' || s[count] == '.'
-		    || s[count] == '.' || s[count] == '!' || s[count] == '?'
-		    || s[count] == '"' || s[count] == '(' || s[count] == ')'
-		    || s[count] == '{' || s[count] == '}')
-		{
-			if (s[count + 1] >= 97 && s[count + 1] <= 122)
-			{
-				s[count + 1] = s[count + 1] - 32;
-			}
-		}
-		count++;
+		while (!(str[index] >= 'a') && (str[index] <= 'z'))
+			index++;
+	
+		if (str[index - 1] == ' ' ||
+				str[index - 1] == '\t' ||
+				str[index - 1] == '\n' ||							str[index - 1] == ',' ||							str[index - 1] == ';' ||							str[index - 1] == '.' ||
+				str[index - 1] == '!' ||							str[index - 1] == '?' ||
+				str[index - 1] == '"' ||
+				str[index - 1] == '(' ||
+				str[index - 1] == ')' ||
+				str[index - 1] == '{' ||
+				str[index - 1] == '}')
+			str[index] -= 32;
 	}
-	return (s);
+
+	return (str);
 }
