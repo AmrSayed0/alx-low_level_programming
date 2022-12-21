@@ -1,14 +1,9 @@
 #include "main.h"
-
 /**
- *
- *  * _strlen - returns the length of a string
- *
- *   * @s: string
- *
- *    * Return: returns length as integer;
- *
- *     */
+* _strlen - returns the length of a string
+* @s: string
+* Return: returns length as integer;
+*/
 
 int _strlen(char *s)
 {
@@ -21,14 +16,10 @@ int _strlen(char *s)
 }
 
 /**
- *
- * * cap_string - function that capitalize first character of a word
- *
- * * @str: string to capitalize
- *
- * * Return: returns the capitalized string
- *
- * */
+* cap_string - function that capitalize first character of a word
+* @str: string to capitalize
+* Return: returns the capitalized string
+*/
 
 char *cap_string(char *str)
 {
